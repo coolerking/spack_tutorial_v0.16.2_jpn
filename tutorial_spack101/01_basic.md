@@ -190,7 +190,6 @@ Spackは、仕様ごとにハッシュを生成します。
 Spackはこの値を使用して、仕様を比較し、すべての組み合わせバージョンに固有のインストールディレクトリを生成します。
 ソフトウェアの依存関係がより複雑なパッケージをインストールする際は、既存パッケージのハッシュが目的の仕様に一致する場合にのみ、Spackは既存パッケージを再利用が可能になります。
 
-
 ```bash
 $ spack install tcl
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
@@ -676,10 +675,6 @@ o |  libiconv
 o  berkeley-db
 ```
 
-You may also have noticed that 
-there are some packages shown in the spack find -d output that 
-we didn’t install explicitly.
-
 `spack find -d` コマンドの出力には、明示的にインストールしなかったパッケージもいくつか表示されていることに気付いたかもしれません。
 これらは暗黙的にインストールされた依存関係です。
 暗黙的にインストールされたいくつかのパッケージは、 `spack find -d` コマンド出力に依存関係として表示されませんが、これらはビルド時の依存関係です。
@@ -824,7 +819,6 @@ patchelf: not an ELF executable
 ==> Extracting trilinos-13.0.1-qmjbxf2kamskoplhqlejy3esksrquni2 from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-13.0.1-qmjbxf2kamskoplhqlejy3esksrquni2
 ```
-
 
 ここまでで、だんだんと Spackの力を理解し始めていると思います。
 デフォルト構成の Trilinos には23のトップレベルの依存関係があり、その多くには独自の依存関係があります。
@@ -1132,7 +1126,6 @@ o  autoconf-archive
 `spack graph` コマンドのASCII出力は、複雑なパッケージだと解析が難しい場合があります。
 `--dot` オプションを使うと、出力をGraphviz `.dot` 形式に変更できます 。
 
-
 ## パッケージのアンインストール
 
 ここまでのチュートリアルでは zlib と Tcl についてたくさんの構成をインストールしてきました。
@@ -1168,7 +1161,6 @@ zlib@1.2.8  zlib@1.2.8	zlib@1.2.11
 ```
 
 installと同じ構文を使って、仕様ごとにパッケージをアンインストールできます。
-
 
 ```bash
 $ spack uninstall zlib %gcc@6.5.0
@@ -1374,5 +1366,3 @@ $ spack compiler add $(spack location -i gcc@8.3.0)
 $ spack compiler remove gcc@8.3.0
 ==> Removed compiler gcc@8.3.0
 ```
-
-
