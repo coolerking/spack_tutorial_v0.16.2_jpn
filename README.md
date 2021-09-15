@@ -1,10 +1,15 @@
 # spack_tutorial_v0.16.2_jpn
 
-Spack 公式ドキュメント v0.16.2 をもとにチュートリアルを翻訳したもの。
+
+Spack 公式ドキュメント v0.16.2 をもとにチュートリアルを翻訳したものです。
 
 - [Tutorial: Spack 101](tutorial_spack101/00_tutorial.md)
 
-## メモ
+## 訳者メモ
+
+管理者権限をもたない一般ユーザで富岳上にてOSSを活用するには、Spack というOSSツールでホームディレクトリ内でビルドしたものを活用することになる。
+
+### Spack環境
 
 - Spack環境には2種類存在する
   - Spackにより管理された環境(managed environment)
@@ -22,6 +27,12 @@ Spack 公式ドキュメント v0.16.2 をもとにチュートリアルを翻�
   - spack コマンドでコンクリート化(concretize)することで作成される
   - **環境名がない**
   - 富岳管理者が一般ユーザ向けに公開している `/opt/apps/spack` 上の環境がこれにあたる
+
+### 構成
+
+- 計算ノードで `spack install` するためにはコンパイラ、パッケージビルド時の設定を変更する必要がある
+- `compilers.yaml`
+- `packages.yaml`
 
 ## ライセンス
 
