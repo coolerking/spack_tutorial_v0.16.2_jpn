@@ -1,6 +1,5 @@
 # spack_tutorial_v0.16.2_jpn
 
-
 Spack 公式ドキュメント v0.16.2 をもとにチュートリアルを翻訳したものです。
 
 - [Tutorial: Spack 101](tutorial_spack101/00_tutorial.md)
