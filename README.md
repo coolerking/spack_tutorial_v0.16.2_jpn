@@ -57,6 +57,35 @@ Spack 公式ドキュメント v0.16.2 をもとにチュートリアルを翻�
   - 依存関係パッケージ含めた詳細なインストール仕様がDAC化される
   - 手動インストールした独自パッケージやOSパッケージの代用などはDACを書き換える
 
+### パッケージ作成
+
+- ソースコード(tar.gz形式でおとしてきたやつ)ファイルをもとにSpack レシピを作れる
+
+```bash
+spack create https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
+```
+
+- `$EDITOR` 指定エディタが開いて `packages.py` が編集可能に
+- Autotools ベースならAutotoolsベースのクラステンプレートになっている
+- Pythonコメント、URL指定、メンテナ、バージョン、依存関係、`config_args` メソッドを埋める
+- `spack install` や `spack info` しながらデバッグ
+- 場合により `spack cd` で依存関係先のパッケージを直接いじる
+  - `spack build-env ＜パッケージ名＞ bash` 上で `configure` をかけながらデバッグ
+  - おわったら `exit`
+
+### 開発者ワークフロー
+
+- 既存のSpack 管理化パッケージのコードにパッチを当てspack installできるようにする
+
+```bash
+spack develop ＜Spackパッケージ名＞@＜バージョン番号＞
+spack concretize -f
+$EDITOR ＜Spackパッケージ内ソースコード＞　←パッチを適用
+spack install
+spack build-env ＜Spackパッケージ名＞@＜バージョン番号＞ -- bash ←spack install がエラーの場合は原因究明
+spack undevelop ＜Spackパッケージ名＞
+```
+
 ## ライセンス
 
 [MITライセンス](./LICENSE) 準拠とする。

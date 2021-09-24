@@ -59,8 +59,6 @@ $ . ~/spack/share/spack/setup-env.sh
 
 In order to avoid modifying your Spack installation with the package we are creating, add a package repository just for this tutorial by entering the following command:
 
-
-
 作成しているパッケージでSpackでインストール済みのものが変更されないようにするには、次のコマンドを入力し、このチュートリアル専用の **パッケージリポジトリ** を追加します。
 
 ```bash
@@ -114,7 +112,7 @@ Spackテンプレートは、次に示すようなスケルトン構成になっ
 - 対象ソフトウェアが `Autotools` で構築されていることを示している（継承元クラスから）
 - docstring テンプレートを提供（Pythonコメントサンプル部分）
 - ホームページのURL指定例を掲示（`https://www.example.com`）
-- パッケージメンテナのリストを指定する方法を掲示（``meintainers`）
+- パッケージメンテナのリストを指定する方法を掲示（`meintainers`）
 - ソフトウェアのバージョンディレクティブをチェックサム付きで指定（`version`）
 - 依存関係ディレクティブの例を掲示（コメント内の `depends_on('foo')`）
 - `configure_args` メソッドのスケルトンを提供
