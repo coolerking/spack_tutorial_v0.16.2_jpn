@@ -86,6 +86,45 @@ spack build-env ＜Spackパッケージ名＞@＜バージョン番号＞ -- bas
 spack undevelop ＜Spackパッケージ名＞
 ```
 
+### ミラー
+
+- ソースコードキャッシュミラーとバイナリキャッシュミラーの２つが存在
+- ソースコードキャッシュミラー
+  - ソースコードのダウンロードをミラーで代替
+  - インターネット不通環境で Spack を運用できる
+    - 後付で追加インストールしたパッケージをミラーに加えるにはインストール後再度 `spack mirror create` を実行する
+
+```bash
+spack mirror create -d ~/mirror -a
+umask 027
+chmod -R g+rs ~/mirror
+chgrp -R <your_group_name> ~/mirror
+```
+
+- バイナリキャッシュミラー
+  - Spackソースコードのコンパイルに時間がかかる問題の解決策の１つ
+    - もうひとつがSpack チェーン
+      - 親となる環境を指定することで親側で構築したバイナリをキャッシュのようにつかう
+  - Spack におけるバイナリパッケージは `*.spack` 拡張子がつく
+  - まず環境を作り、必要なパッケージを `spack add` だけ実行
+  - `spack install` 前にSpack 構成ファイルを `spack config add "config:install_tree:padded_length:128"` を実行して編集
+    - 128文字にインストールツリー（パス）を128文字にパディングする
+  - キャッシュを使わずに `spack install --no-cache`
+    - 初回のインストールのための時間は必要
+    - Cコード内のパス指定も128文字以内のものに置き換わってコンパイルされる
+  - パッケージ署名をし直す
+    - `spack gpg create "My Name" "<my.email@my.domain.com>"`
+  - gpgキーはバックアップしておく
+  - すべてのSpack管理化非外部パッケージに対して `spack buildcache create --only=package <パッケージ名>`
+    - スクリプトでforループを書いて実行するサンプルがチュートリアルに載っている
+  - umask、chmod、chgrp
+  - ユーザがバイナリキャッシュを使う前にキャッシュ上のすべてのパッケージを信頼することを確認
+    - `spack buildcache keys --install --trust --force`
+
+### スタック
+
+- TBD
+
 ## ライセンス
 
 [MITライセンス](./LICENSE) 準拠とする。
