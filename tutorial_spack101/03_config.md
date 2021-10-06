@@ -1,3 +1,5 @@
+# 構成チュートリアル
+
 > **チュートリアルセットアップ**
 > これより前のチュートリアルセクションを実行していない場合は、次の手順でSpackをセットアップしてください。
 > ```bash
@@ -7,8 +9,6 @@
 > ```
 > セットアップの詳細は [基本的なインストールチュートリアル](https://spack-tutorial.readthedocs.io/en/latest/tutorial_basics.html#basics-tutorial) を参照のこと。
 > さらに支援が欲しい場合はSlackチャネル `#tutorial` に参加してくださいー [spackpm.herokuapp.com](spackpm.herokuapp.com) で招待を受けてください
-
-# 構成チュートリアル
 
 このチュートリアルでは、ソフトウェアのインストールに関するSpackの動作をカスタマイズできるさまざまな構成オプションについて説明します。
 最初に、構成ファイルの階層について説明します。
@@ -207,7 +207,6 @@ GCCコンパイラの2バージョンと、FlangコンパイラのないClangコ
     environment: {}
     extra_rpaths: []
 ```
-
 
 変更を加えた `compiler` エントリのセクションについて説明しましょう。
 最大の変更は、`paths` セクションです。
