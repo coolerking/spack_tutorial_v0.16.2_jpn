@@ -1338,7 +1338,6 @@ hypre@2.20.0                 numactl@2.0.14
 - [Spack スタックチュートリアル](https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html) ：組み合わせ環境を構成する（たとえば、複数コンパイラに対応する同一パッケージ）
 - [インストールレベルの並列ビルド](https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism) ：環境の並列ビルドをするための `spack install` 実行のしかたについて
 
-
 ### 環境の使用
 
 - [開発者ワークフロー](https://spack-tutorial.readthedocs.io/en/latest/tutorial_developer_workflows.html)：環境上でコードを開発する
