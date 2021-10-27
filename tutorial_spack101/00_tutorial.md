@@ -7,7 +7,7 @@
 
 ## スライド
 
-- [Spackを使って複雑なHPCソフトウェア環境を管理しよう](../slides/spack_pearc21_tutorial_slides_jpn.pptx) PPTX形式
+- [Spackを使って複雑なHPCソフトウェア環境を管理しよう](../slides/spack_pearc21_tutorial_slides_jpn.pdf) PDF形式
 
 **引用元：** 2021年7月19日開催のバーチャルイベントAdvanced Research Computing (PEARC’21)における Practice & Experience「Managing HPC Software Complexity with Spack」（Gregory Becker、Robert Blake、Massimiliano Culpo、Tammy Dahlgren, Adam Stewart、そして Todd Gamblin） より。
 
